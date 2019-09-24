@@ -1,0 +1,17 @@
+.home-jumbo{
+    background: url('../img/sao.jpg') center;
+
+}
+
+.media-body{
+    margin-left: 10px;
+}
+
+.mainArt{
+    background: url('../img/background.jpg');
+    background-repeat: no-repeat;
+    background-size: auto;
+    background-position: center;
+    text-align: center;
+
+}

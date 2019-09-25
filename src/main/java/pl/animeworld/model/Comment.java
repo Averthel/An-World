@@ -1,11 +1,15 @@
 package pl.animeworld.model;
 
+import org.springframework.stereotype.Component;
+import org.springframework.web.context.annotation.SessionScope;
+
 import javax.persistence.*;
 
 @Entity
+@Component
+
 @Table(name = "comment")
 public class Comment {
-
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

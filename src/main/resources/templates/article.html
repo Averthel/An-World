@@ -49,12 +49,14 @@
             <br />
             <form action="#" th:action="@{/addComment}" method="post">
                 <div class="form-group">
-                    <label for="commentInput">Komentarz</label>
+                    <label for="commentInput">Dodaj Komentarz:</label>
+                    <br />
+                    <input type="text" name="username" placeholder="Nazwa użytkownika">
                     <textarea class="form-control" id="commentInput" name="content" rows="3" cols="50"> </textarea>
                 </div>
-                <a href="#"class="btn btn-sm btn-primary">
-                    Dodaj komentarz
-                </a>
+                <div class="text-center">
+                    <button class="btn btn-primary">Dodaj komentarz</button>
+                </div>
             </form>
         </div>
         <div class="col-sm-2 sidenav">

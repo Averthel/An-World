@@ -10,4 +10,9 @@ public class HomeController {
     public String home(){
         return "index";
     }
+
+    @GetMapping("/article")
+    public String article(){
+        return "article";
+    }
 }

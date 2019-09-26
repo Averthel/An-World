@@ -11,8 +11,5 @@ public class HomeController {
         return "index";
     }
 
-    @GetMapping("/article")
-    public String article(){
-        return "article";
-    }
+
 }

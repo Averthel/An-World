@@ -4,6 +4,7 @@ import org.springframework.stereotype.Component;
 import org.springframework.web.context.annotation.SessionScope;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotEmpty;
 import javax.validation.constraints.NotNull;
 import java.time.LocalDateTime;
 
@@ -12,11 +13,10 @@ public class Comment {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(nullable = false)
+    @NotEmpty
     private String content;
-    @Column(nullable = false)
+    @NotEmpty
     private String username;  //docelowo będzie user
-    @Column(nullable =  false)
     private LocalDateTime dateTime;
 
     public Comment(){}

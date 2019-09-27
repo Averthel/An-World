@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import pl.animeworld.common.Message;
 import pl.animeworld.model.Comment;
 import pl.animeworld.repository.CommentRepository;
@@ -29,15 +30,19 @@ public class CommentController {
     }
 
     @PostMapping("/addComment")
-    public String addComment(@RequestParam String content, @RequestParam String username, Model model ){
+    public String addComment(@RequestParam String content, @RequestParam String username, Model model, RedirectAttributes redirectAttr ){
         Comment comment = new Comment();
         LocalDateTime localDateTime = LocalDateTime.now();
         comment.setUsername(username);
         comment.setContent(content);
         comment.setDateTime(localDateTime);
-        commentRepository.save(comment);
-        model.addAttribute("message", new Message("Sukces!", "Komentarz dodany"));
-        return "message";
+        try {
+            commentRepository.save(comment);
+            redirectAttr.addFlashAttribute("message", "Komentarz dodany");
+        }catch (Exception e){
+            redirectAttr.addFlashAttribute("message", "Ups, nie udało się dodać komentarza");
+        }
+        return "redirect:article";
     }
 
     @RequestMapping("/article")

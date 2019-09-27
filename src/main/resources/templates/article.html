@@ -47,6 +47,7 @@
         <div class="col-sm-8 text-left">
             <h3>Tutaj będize artykuł</h3>
             <br />
+            <p th:text="${message}">com test</p>
             <form action="#" th:action="@{/addComment}" method="post">
                 <div class="form-group">
                     <label for="commentInput">Dodaj Komentarz:</label>

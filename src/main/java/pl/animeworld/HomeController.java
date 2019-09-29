@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public class HomeController {
 
     @GetMapping("/")
-    public String home(){
+    public String home() {
         return "index";
     }
 
     @GetMapping("/home")
-    public String alternativeHome(){
+    public String alternativeHome() {
         return "index";
     }
 
